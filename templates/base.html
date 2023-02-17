@@ -7,7 +7,7 @@
 <body>
     <h1>Todo App</h1>
 
-    <form act="">
+    <form action="/add" method="post">
         <div>
             <label for="title">Todo Task</label>
             <input type="text" name="title" placeholder="Enter a task">
@@ -15,5 +15,18 @@
             <button type="submit">Add</button>
         </div>
     </form>
+
+{% for todo in todo_list %}
+    <p>{{ todo.id }} | {{ todo.title }}</p>
+
+    {% if todo.complete == False %}
+        <spn>Not Complete</spn>
+    {% else %}
+        <spn>Complete</spn>
+    {% endif %}
+
+    <a href="">Update</a>
+    <a href="">Delete</a>
+{% endfor %}
 </body>
 </html>
